@@ -1,45 +1,70 @@
-# Make contributing easy
+# OS2planCO2 sagshåndtering (issues)
 
-It's important that it is very clear how you can become involved and contribute to a project.
+Dette repository bruges til håndtering og dokumentation af ændringsønsker til OS2planCO2.
 
-Therefor:
+Her samles ændringsønsker, fejlmeldinger og tilsvarende til den fælles behandling af ønsker fra myndigheder, leverandører og øvrige bidragydere.
 
-* The project MUST have a public issue tracker that accepts suggestions from anyone. In OS2 we use [Jira](https://os2web.atlassian.net/) but a combination with for example Github issues are also okay.
-* The project MUST include instructions for how to privately report security issues for responsible disclosure. This can be covered by the [SECURITY](SECURITY.md) file.
-* The documentation MUST link to both the public issue tracker and submitted codebase changes, for example in a README file.
-* The project MUST have communication channels for users and developers. In OS2 we provide the tools to communicate through email lists and our main website.
-* The documentation SHOULD include instructions for how to report potentially security sensitive issues on a closed channel.
+## Arbejdsgang for ændringsønsker
 
-# Example
+Nye ændringsønsker oprettes som GitHub Issues og behandles i det fælles GitHub Project:
 
-# Contribution guidelines for *OS2produkt*
+**Fra idé til færdig løsning**
 
-If you want to contribute to *OS2produkt*, we ask you to follow these guidelines.
+Projektet bruges til at følge ændringsønsker gennem bl.a.:
 
-## Reporting bugs
-If you have encountered a bug in *OS2produkt*, please check if an issue already exists in the list of existing [issues](https://os2web.atlassian.net/), if such an issue does not exist, you can create one [here](https://os2web.atlassian.net/). When writing the bug report, try to add a clear example that shows how to reproduce said bug.
+- Nye ændringsønsker
+- Screening
+- Afventer løsningsbeskrivelse
+- Klar til prioritering
+- Bestilt hos leverandør
+- Igangværende opgaver
+- Løsninger i test
+- Løsninger i review
+- Afsluttede løsninger
 
-## Adding new features
-Before making making changes to the code, we advise you to first check the list of existing [issues](https://os2web.atlassian.net/) for OS2produkt to see if an issue for the suggested changes already exists. If such an issue does not exist, you can create one [here](https://os2web.atlassian.net/). Creating an issue gives an opportunity for other developers to give tips even before you start coding. If you are in the early idea phase, or if your feature requires larger changes, you can discuss it with the [projects coordination group](https://os2.eu) or by [contacting OS2 directly](https://os2.eu/kontakt) to make sure you are heading in the right direction.
+## Screening af nye ændringsønsker
 
-### Code style
-To keep the code clean and readable, *Please include links to coding standards and tools used:*
+Der er etableret en fast screeningsproces, som hjælper Product Owner med at vurdere, om et nyt ændringsønske er beskrevet godt nok til at gå videre til teknisk afklaring, løsningsforslag og estimering.
 
-Whenever a branch is pushed or a pull request is made, the code will be checked in CI by the tools mentioned above, so make sure to install these tools and run them locally before pushing branches/making PRs.
+Dokumentation af kriterierne:
 
-### Forking the repository
-In order to implement changes to *OS2produkt* when you do not have rights for the required repository, you must first fork the repository. Once the repository is forked, you can clone it to your local machine.
+| Kriterium | Det centrale spørgsmål |
+| --- | --- |
+| Forretningsbehov | Er det forståeligt, hvilket problem eller behov der findes i dag? |
+| Forretningsværdi | Er det forståeligt, hvilken nytte ændringen forventes at skabe? |
+| Ønsket ændring | Er det forståeligt, hvad opretter ønsker ændret? |
+| Behov vs. løsning | Kan behovet skelnes fra et eventuelt foreslået teknisk løsningsforslag? |
+| Sammenhæng | Er der nok kontekst til at forstå, hvor og hvornår behovet opstår? |
+| Klarhed / afklaringsgrad | Kan en udvikler begynde den tekniske afklaring uden først at få behovet genforklaret? |
+| Omfang / afgrænsning | Er den centrale opgave tilstrækkeligt afgrænset til at kunne behandles? |
+| Prioriteringsgrundlag | Virker den oplyste prioritet rimeligt underbygget? |
 
-### Making the changes
-On your local machine, create a new branch, and name it like:
-- `feature/some-new-feature`, if the changes implement a new feature
-- `issue/some-issue`, if the changes fix an issue
+Behandlingen af ændringsønsker endvidere på nogle enkle principper:
 
-Once you have made changes or additions to the code, you can commit them (try to keep the commit message descriptive but short). If an issue exists in the issue list for the changes you made, be sure to format your commit message like `"Fixes #<issue_id> -- description of changes made`, where `<issue_id>"` corresponds to the number of the issue on Jira or GitHub. To demonstrate that the changes implement the new feature/fix the issue, make sure to also add tests.
+- Behovet skal være forståeligt før løsningen designes.
+- Opretter behøver ikke beskrive den tekniske løsning.
+- Tekniske detaljer afklares sammen med udvikler i næste trin.
+- Screeningen skal være ensartet, gennemsigtig og sporbar.
+- Eksisterende kommentarer slettes som udgangspunkt ikke.
+- Labels og Project-felter bruges til at skabe struktur og overblik.
 
-### Making a pull request
-If all changes have been committed, you can push the branch to your fork of the repository and create a pull request to the `master` branch of the *OS2produkt* repository. Your pull request will be reviewed, if applicable feedback will be given and if everything is approved, it will be merged.
+## Bidrag
 
-### Reviews on releases
+Alle med relevante ændringsønsker kan oprette et issue via de tilgængelige issue-skabeloner.
 
-All pull requests will be reviewed before they are merged to a release branch. As well as being reviewed for functionality and following the code style they will be checked with the steering committee and/or the coordination group for the project.
+Ved spørgsmål til proces, prioritering eller screening henvises til Product Owner for OS2planCO2 (os2planco2@os2.eu).
+
+## Licensing of contributions (licensering af bidrag)
+
+This project uses the following licenses:
+
+- **Source code:** Mozilla Public License 2.0 (MPL-2.0).
+- **Documentation and other non-code content:** Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), including documentation, issues, discussions, and other written contributions.
+
+By submitting a contribution to this project, you agree to license your contribution under the applicable license stated above.
+
+You confirm that you have the necessary rights to submit your contribution and to make it available under the applicable license.
+
+If your contribution includes third-party material, you must clearly identify it and ensure that its license permits its inclusion in the project.
+
+Contributions remain attributed to their respective authors.

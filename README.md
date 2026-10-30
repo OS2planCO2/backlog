@@ -1,12 +1,33 @@
-# OS2projekt
 
-This is a template repository describing best practice when creating Open Source projects in OS2.
+# OS2planCO2 – Backlog og projektstyring
 
-The readme file must contain a description of the project and references to other documents in the project.
+Dette repository anvendes til backlog og projektstyring for OS2planCO2. Her håndteres opgaver, fejl, ændringsønsker, prioriteringer og beslutninger vedrørende projektets udvikling og vedligeholdelse.
 
-## Inspired by
+**Kildekoden** findes i et separat repository:
+[OS2planCO2 – Kildekode](https://github.com/OS2planCO2/planCO2)
 
-Example content is inspired by other projects:
+## Projektinformation
 
-* [The Standard for Public Code](https://standard.publiccode.net/)
-* [Open Zaak](https://github.com/open-zaak/)
+- [Adfærdskodeks](CODE_OF_CONDUCT.md)
+- [Retningslinjer for bidrag](CONTRIBUTING.md)
+- [Governance og organisering](GOVERNANCE.md)
+- [Sikkerhed og indberetning af sårbarheder](SECURITY.md)
+
+## Licenser
+
+- [MPL 2.0 – Kildekode](LICENSE)
+- [CC BY-SA 4.0 – Dokumentation og øvrigt indhold](LICENSE_DOCS)
+
+## Om OS2
+
+OS2planCO2 er en del af [OS2 – Offentligt Digitaliseringsfællesskab](https://www.os2.eu).
+
+---
+
+### English summary
+
+This repository serves as the project backlog and management space for OS2planCO2, including issues, feature requests, development priorities, and project decisions.
+
+Source code is maintained separately in the [OS2planCO2 source code repository](https://github.com/OS2planCO2/planCO2).
+
+For security vulnerabilities, please refer to the [Security Policy](SECURITY.md).
