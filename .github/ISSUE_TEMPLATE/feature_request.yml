@@ -1,110 +1,93 @@
 name: "Udviklingsønske"
-description: "Foreslå en ny funktion eller forbedring"
+description: "Foreslå en ny funktion eller forbedring af OS2planCO2."
 title: "[Udviklingsønske]: "
-labels:
-  - Feature request
-assignees: []
-type: Feature
-projects: ["os2valghalla"]
-
 body:
   - type: markdown
     attributes:
       value: |
-        Før du opretter et funktionsønske, bedes du undersøge, om det allerede er blevet foreslået, så dubletter undgås.
-
-        Her kan du indberette udviklingsønsker til OS2valghallas koordinationsgruppe. Ønskerne vil blive gennemgået og prioriteret i forbindelse med udviklingsforløb 1-2 gange om året.
+        Beskriv et behov i arbejdet med OS2planCO2-pluginet til QGIS.
+        Søg først i [eksisterende sager](https://github.com/OS2planCO2/backlog/issues?q=is%3Aissue), også de lukkede.
+        Ønsket behandles efter projektets [retningslinjer for bidrag](https://github.com/OS2planCO2/backlog/blob/main/CONTRIBUTING.md).
+        Du behøver ikke beskrive den tekniske løsning. Opfølgning sker i sagen via din GitHub-konto.
+        Del kun oplysninger og filer, som må offentliggøres.
 
   - type: textarea
     id: current_situation
     attributes:
-      label: Nuværende situation
-      description: |
-        Beskriv den nuværende arbejdsgang, og forklar hvorfor den eksisterende funktionalitet ikke er tilstrækkelig.
+      label: Nuværende situation og behov
+      description: Beskriv arbejdsgangen i QGIS, problemet og den berørte del af OS2planCO2.
       placeholder: |
-        Jeg forsøger at...
-        Den nuværende begrænsning er...
+        I arbejdet med lokalplaner forsøger jeg at ...
+        I dag gør jeg ...
+        Begrænsningen er ...
     validations:
       required: true
 
   - type: textarea
     id: proposed_solution
     attributes:
-      label: Foreslået funktion
-      description: |
-        Beskriv den funktion, du gerne vil have tilføjet, og hvordan den bør fungere set fra brugerens perspektiv.
+      label: Ønsket ændring
+      description: Hvad vil du gerne kunne gøre? Beskriv det ønskede resultat fra brugerens perspektiv. Et konkret løsningsforslag er velkomment, men ikke nødvendigt.
+      placeholder: "Jeg ønsker at kunne ... Resultatet skal gøre det muligt at ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: value
+    attributes:
+      label: Værdi og målgruppe
+      description: Hvem har behovet, hvor ofte opstår det, og hvilken forskel vil ændringen gøre for planlægningen eller vurderingen af CO₂-aftryk?
       placeholder: |
-        Jeg kunne godt tænke mig...
-        Den skal fungere ved at...
+        Ændringen vil gavne ...
+        Behovet opstår ...
+        Den forventede gevinst er ...
     validations:
       required: true
 
   - type: textarea
     id: examples
     attributes:
-      label: Eksempler eller anvendelsesscenarier
-      description: |
-        Giv konkrete eksempler. Vedhæft gerne skærmbilleder, mockups, videoer eller links til lignende løsninger, hvis de findes.
+      label: Eksempler og afgrænsning
+      description: Beskriv konkrete anvendelsesscenarier og eventuelle krav til data eller resultater. Angiv gerne, hvad ønsket ikke behøver at omfatte. Vedhæft skærmbilleder, skitser eller links.
       placeholder: |
-        Eksempel:
-        Relateret diskussion:
-        Skærmbillede:
+        Eksempel fra en planlægningsopgave:
+        Relevante data eller beregningsindstillinger:
+        Forventet resultat:
+        Afgrænsning og relaterede sager:
     validations:
       required: false
 
   - type: textarea
-    id: value
+    id: alternatives
     attributes:
-      label: Værdi og fordele
-      description: |
-        Forklar, hvem der får gavn af funktionen, og hvorfor den vil forbedre produktet.
-        Skyldes dit forslag et særligt behov eller et problem?
-      placeholder: |
-        Denne funktion vil...
-        Den vil gavne...
+      label: Alternativer og nuværende omvej
+      description: Kan opgaven løses på anden måde i dag? Beskriv eventuelt manuelt arbejde eller andre værktøjer.
     validations:
-      required: true
+      required: false
+
+  - type: textarea
+    id: timing
+    attributes:
+      label: Tidsmæssigt behov og afhængigheder
+      description: Angiv en eventuel frist og begrund den. Beskriv afhængigheder til andre opgaver. Oplysningerne indgår i prioriteringen.
+    validations:
+      required: false
 
   - type: input
-    id: kontaktperson_navn
+    id: organization
     attributes:
-      label: Navn
-      placeholder: Indtast navn
+      label: Kommune eller organisation (valgfrit)
+      description: Kan hjælpe med at forstå anvendelsen. Opfølgning sker via din GitHub-konto.
+      placeholder: "Kommune, rådgiver eller anden organisation"
     validations:
-      required: true
-
-  - type: input
-    id: kontaktperson_mail
-    attributes:
-      label: Mail
-      placeholder: Indtast mailadresse
-    validations:
-      required: true
-
-  - type: input
-    id: kommune
-    attributes:
-      label: Kommune
-      placeholder: Indtast kommune
-    validations:
-      required: true
-
-  - type: dropdown
-    id: kontakt
-    attributes:
-      label: Må vi kontakte dig ved behov for uddybning?
-      options:
-        - Ja
-        - Nej
-    validations:
-      required: true
+      required: false
 
   - type: checkboxes
     id: checklist
     attributes:
       label: Tjekliste
       options:
-        - label: Jeg har undersøgt, om funktionsønsket allerede findes, før jeg oprettede dette.
+        - label: Jeg har undersøgt, om udviklingsønsket allerede findes i en eksisterende sag.
           required: true
         - label: Jeg har beskrevet ønsket sagligt og respektfuldt.
           required: true

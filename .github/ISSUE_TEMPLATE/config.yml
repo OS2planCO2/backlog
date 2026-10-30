@@ -1,2 +1,11 @@
 blank_issues_enabled: false
-body_only: true
+contact_links:
+  - name: "Sikkerhedssårbarhed"
+    url: "https://github.com/OS2planCO2/backlog/blob/main/SECURITY.md"
+    about: "Følg sikkerhedspolitikken: Skriv til os2planco2@os2.eu med kopi til security@os2.eu."
+  - name: "Brugervejledning til OS2planCO2"
+    url: "https://github.com/OS2planCO2/planCO2/blob/main/docs/PlanCO2_Guide.pdf"
+    about: "Læs vejledningen til QGIS-pluginet og beregningerne."
+  - name: "Kildekode"
+    url: "https://github.com/OS2planCO2/planCO2"
+    about: "Find pluginets kildekode. Fejl, udviklingsønsker og brugerhistorier samles i backlog-repositoryet."

@@ -1,54 +1,25 @@
-name: "User Story"
-description: "En User Story er en kort, enkel fortælling om, hvad en bruger gerne vil kunne gøre."
-title: "[User Story]: "
-labels:
-  - User Story
-assignees: []
-type: Feature
-projects: ["os2valghalla"]
-
-projects:
-  - "os2valghalla"
-
+name: "Brugerhistorie (User Story)"
+description: "Beskriv et brugerbehov i OS2planCO2 med testbare acceptkriterier."
+title: "[Brugerhistorie]: "
 body:
   - type: markdown
     attributes:
       value: |
-        # User Stories og acceptkriterier
-
-        ## User Stories
-
-        User Stories er en central del af OS2valghallas backlog. De beskriver, hvad en bruger ønsker at opnå, og hvorfor det er vigtigt.
-
-        **Som** [rolle]
-
-        **ønsker jeg at** [handling/mål]
-
-        **så jeg kan** [gevinst/værdi]
-
-        ## Acceptkriterier
-
-        Acceptkriterier er de betingelser, der skal være opfyldt, før en User Story kan betragtes som færdig.
-
-        **Givet** [konteksten / systemets nuværende tilstand]
-
-        **Når** [handlingen / det brugeren gør]
-
-        **Så** [resultatet / hvordan systemet reagerer]
-
-        Acceptkriterier hjælper med at definere, hvad der skal implementeres, og sikrer, at alle har en fælles forståelse af det forventede resultat. Derfor er det vigtigt, at hver User Story indeholder tydelige acceptkriterier for at sikre kvalitet og ensartethed i implementeringen.
+        En brugerhistorie beskriver, hvem der har et behov i OS2planCO2-pluginet til QGIS, hvad brugeren vil opnå, og hvorfor.
+        Brug formen **Som [rolle] ønsker jeg at [mål], så jeg kan [værdi]**.
+        Acceptkriterier beskriver det observerbare resultat med **Givet [kontekst], Når [handling], Så [resultat]**.
+        Søg først i [eksisterende sager](https://github.com/OS2planCO2/backlog/issues?q=is%3Aissue).
+        Del kun oplysninger og filer, som må offentliggøres. Opfølgning sker i sagen via din GitHub-konto.
 
   - type: textarea
     id: user_story
     attributes:
-      label: User Story
-      description: Beskriv brugerbehovet som en User Story.
+      label: Brugerhistorie
+      description: Beskriv ét afgrænset brugerbehov og den værdi, det skaber.
       placeholder: |
-        Som systemadministrator
-
-        ønsker jeg at kunne eksportere enhedskonfigurationer
-
-        så jeg hurtigt kan genskabe den samme opsætning på nye enheder.
+        Som planlægger
+        ønsker jeg at kunne se CO₂-resultater for et valgt delområde
+        så jeg kan vurdere delområdets bidrag til lokalplanens samlede aftryk.
     validations:
       required: true
 
@@ -56,64 +27,57 @@ body:
     id: acceptance_criteria
     attributes:
       label: Acceptkriterier
-      description: Beskriv de kriterier, der skal være opfyldt, for at User Storyn kan accepteres.
+      description: Angiv testbare kriterier. Beskriv relevante normale forløb og fejlsituationer. Ved beregninger angives testdata, indstillinger, forventet tal, enhed og eventuel tolerance.
       placeholder: |
-        Givet at brugeren er logget ind som administrator
+        Kriterium 1:
+        Givet et QGIS-testprojekt med to delområder og dokumenterede referenceværdier
+        Når jeg vælger det ene delområde og viser dets CO₂-resultater
+        Så vises kun resultater for det valgte delområde med den aftalte enhed og tolerance.
 
-        Når brugeren vælger "Eksportér konfiguration"
+        Kriterium 2:
+        Givet at der ikke er valgt et delområde
+        Når jeg forsøger at vise resultater for et delområde
+        Så får jeg en forståelig besked om at vælge et delområde.
 
-        Så downloades konfigurationen som en fil
-
-        ---
-
-        Givet at eksporten er gennemført
-
-        Når filen er blevet genereret
-
-        Så vises en bekræftelse til brugeren
+        Konkret testdatasæt, referenceværdier, enhed og tolerance:
     validations:
       required: true
 
   - type: textarea
     id: additional_information
     attributes:
-      label: Yderligere oplysninger
-      description: Links, mockups, afhængigheder eller andre relevante oplysninger.
+      label: Kontekst, afgrænsning og afhængigheder
+      description: Angiv relevante lag, beregningsindstillinger, forudsætninger og relaterede sager. Beskriv gerne, hvad der ligger uden for historien.
       placeholder: |
-        Tilføj eventuelle supplerende oplysninger her.
+        Arbejdsgang og forudsætninger:
+        Indgår i historien:
+        Indgår ikke:
+        Relaterede sager og afhængigheder:
     validations:
       required: false
 
   - type: textarea
     id: attachments
     attributes:
-      label: Vedhæftninger
-      description: Tilføj skærmbilleder, mockups, logfiler eller andre relevante filer ved at trække dem ind i sagen, efter den er oprettet.
-      placeholder: |
-        Vedhæft relevante filer, billeder eller links.
+      label: Testdata og vedhæftninger
+      description: Vedhæft eksempelprojekt, data, skitser eller skærmbilleder ved at trække filer ind i feltet eller tilføje links. Brug kun materiale, som må offentliggøres.
     validations:
       required: false
 
   - type: textarea
     id: test_phase
     attributes:
-      label: Instruktioner til testfasen (Må ikke redigeres)
+      label: Testvejledning til den videre behandling
+      description: Dette er vejledning til den ansvarlige for løsningen. Testresultater tilføjes som kommentarer, når sagen er klar til brugertest.
       value: |
-        ## ⚠️ Instruktioner til testfasen
+        Ved brugertest dokumenteres følgende i en kommentar:
+        - [ ] Version af QGIS, OS2planCO2 og operativsystem
+        - [ ] Testtrin, testdata og relevante beregningsindstillinger
+        - [ ] Forventede og faktiske resultater for hvert acceptkriterium
+        - [ ] Enheder og eventuel tolerance ved beregninger
+        - [ ] Afvigelser samt hvilke acceptkriterier der er bestået eller ikke bestået
 
-        Når denne sag flyttes til **Klar til brugertest**, skal den tildelte leverandør udføre følgende **i sagens kommentarer** (ikke ved at redigere den oprindelige sagsbeskrivelse):
-
-        - Tilføje en tydelig **testbeskrivelse**
-        - Angive de anvendte **testdata**
-        - Dokumentere **forventede kontra faktiske resultater**
-        - Beskrive eventuelle afvigelser
-
-        ## Tjekliste for test
-
-        - [ ] Testbeskrivelse tilføjet som kommentar
-        - [ ] Testdata angivet
-        - [ ] Resultater dokumenteret
-
-        ⚠️ Tidligere afsnit i denne sag må ikke ændres. Al testdokumentation skal tilføjes som kommentarer.
+        Bevar brugerhistorien og de aftalte acceptkriterier som grundlag for testen.
+        Eventuelle ændringer i omfang eller kriterier dokumenteres i kommentarer.
     validations:
       required: false

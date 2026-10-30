@@ -1,43 +1,84 @@
 name: "Fejlrapportering"
-description: "Rapportér en fejl eller uventet adfærd"
+description: "Rapportér en fejl i OS2planCO2-pluginet til QGIS."
 title: "[Fejl]: "
-labels:
-  - Bug
-assignees: []
-type: Bug
-projects: ["os2valghalla"]
-
-projects:
-  - "os2valghalla"
-
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Brug denne formular til fejl i OS2planCO2-pluginet til QGIS.
+        Søg først i [eksisterende sager](https://github.com/OS2planCO2/backlog/issues?q=is%3Aissue), også de lukkede.
+        Opfølgning sker i sagen via din GitHub-konto; du behøver ikke skrive navn eller e-mailadresse.
+        Del kun projektfiler, data og logudtræk, som må offentliggøres.
+        Sikkerhedssårbarheder skal indberettes som beskrevet i [SECURITY.md](https://github.com/OS2planCO2/backlog/blob/main/SECURITY.md).
 
   - type: textarea
     id: summary
     attributes:
       label: Resumé
-      description: Beskriv kort problemet.
-      placeholder: |
-        Brugere kan ikke gemme ændringer på en enhed.
+      description: Hvilken del af pluginet fejler, og hvad forsøger du at gøre?
+      placeholder: "Beregningen af CO₂-aftryk afbrydes, når jeg beregner et delområde med bygninger."
     validations:
       required: true
 
   - type: input
-    id: page_url
+    id: qgis_version
     attributes:
-      label: Side-URL
-      description: URL'en hvor problemet opstår.
-      placeholder: "https://..."
+      label: QGIS-version
+      description: Angiv hele versionsnummeret fra QGIS' dialog Om QGIS.
+      placeholder: "Versionsnummer, inklusive eventuelt revisionsnummer"
+    validations:
+      required: true
+
+  - type: input
+    id: plugin_version
+    attributes:
+      label: OS2planCO2-pluginets version
+      description: Find versionen i QGIS' pluginhåndtering. Ved en udviklingsversion angives også commit eller branch, hvis kendt. Skriv ukendt, hvis versionen ikke kan findes.
+      placeholder: "Versionsnummer og eventuelt commit"
+    validations:
+      required: true
+
+  - type: input
+    id: operating_system
+    attributes:
+      label: Operativsystem og version
+      placeholder: "Windows, macOS eller Linux samt versionsnummer"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Installation og øvrigt miljø
+      description: Angiv installationskilde og eventuelle relevante afhængigheder eller andre plugins. Beskriv gerne, om fejlen også opstår i et nyt QGIS-projekt.
+      placeholder: |
+        Installeret fra (fx ZIP-fil eller kildekode):
+        Dato eller link til installationsfil:
+        Andre relevante plugins eller Python-pakker:
+        Forekommer fejlen også i et nyt projekt?
     validations:
       required: false
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Trin til at genskabe fejlen
+      description: Beskriv handlinger og indtastede værdier, så andre kan gentage forløbet.
+      placeholder: |
+        1. Åbn et QGIS-projekt med ...
+        2. Åbn OS2planCO2 og vælg ...
+        3. Angiv følgende værdier ...
+        4. Start beregningen ...
+        5. Fejlen opstår, når ...
+    validations:
+      required: true
 
   - type: textarea
     id: actual_behavior
     attributes:
       label: Faktisk adfærd
-      description: Hvad sker der?
-      placeholder: |
-        Når der klikkes på "Gem", vises en fejlmeddelelse, og ændringerne bliver ikke gemt.
+      description: Hvad sker der? Ved et forkert beregningsresultat angives tal og enhed.
+      placeholder: "Beregningen stopper med fejlmeddelelsen ... / Resultatet bliver ... med enheden ..."
     validations:
       required: true
 
@@ -45,86 +86,63 @@ body:
     id: expected_behavior
     attributes:
       label: Forventet adfærd
-      description: Hvad burde ske i stedet?
-      placeholder: |
-        Ændringerne gemmes korrekt, og brugeren modtager en bekræftelse.
+      description: Hvad burde ske? Ved beregningsfejl angives forventet tal, enhed og grundlaget for forventningen.
+      placeholder: "Jeg forventer ... på baggrund af ..."
     validations:
       required: true
 
   - type: textarea
-    id: steps_to_reproduce
+    id: data_and_settings
     attributes:
-      label: Trin til at genskabe fejlen
-      description: Beskriv, hvordan fejlen kan genskabes.
+      label: Datagrundlag og beregningsindstillinger
+      description: Angiv relevante lag, geometrier, koordinatsystem (CRS/EPSG), attributter og indstillinger. Vedlæg gerne et lille datasæt, der viser fejlen. Skriv ikke relevant, hvis fejlen fx opstår ved installation.
       placeholder: |
-        1. Log ind
-        2. Åbn en enhed
-        3. Redigér en værdi
-        4. Klik på "Gem"
-        5. Observer fejlen
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Miljø
-      description: Version, browser, operativsystem eller andre relevante oplysninger.
-      placeholder: |
-        Ekstern eller intern hjemmeside:
-        Browser:
-        Operativsystem:
+        Projekt eller projektskabelon (kilde/version):
+        Berørte lag, datakilder og filformater:
+        Geometritype og CRS/EPSG:
+        Relevante attributter og værdier:
+        Beregningsperiode, livscyklusfaser og øvrige relevante valg:
     validations:
       required: false
 
   - type: textarea
     id: impact
     attributes:
-      label: Konsekvens
-      description: Hvor kritisk er fejlen for afviklingen af valget? Hvilken betydning har problemet for brugerne eller driften?
-      placeholder: |
-        Det er ikke muligt at fordele opgaver, hvilket gør valghandlingen juridisk ugyldig.
-    validations:
-      required: true
-
-  - type: input
-    id: kontaktperson_mail
-    attributes:
-      label: Mail
-      placeholder: Indtast mailadresse
+      label: Konsekvens og eventuel midlertidig løsning
+      description: Hvem og hvilke opgaver påvirkes? Beskriv fx blokering af arbejdet, datatab eller upålidelige CO₂-resultater samt en eventuel tidsfrist.
+      placeholder: "Fejlen påvirker ... Jeg kan midlertidigt komme videre ved at ..."
     validations:
       required: true
 
   - type: textarea
     id: attachments
     attributes:
-      label: Vedhæftninger
-      description: Træk og slip skærmbilleder, logfiler, videoer eller andre relevante filer efter oprettelse af sagen.
-      placeholder: |
-        Tilføj relevante skærmbilleder, filer eller links.
+      label: Fejlmeddelelser, log og vedhæftninger
+      description: Indsæt den præcise fejlmeddelelse og eventuelt Python-fejlspor fra QGIS. Vedhæft skærmbilleder eller et lille eksempelprojekt ved at trække filer ind i feltet eller tilføje links. Fjern fortrolige oplysninger og adgangsoplysninger først.
+      placeholder: "Fejlmeddelelse, logudtræk og eventuelle filer eller links"
     validations:
       required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Tjekliste
+      options:
+        - label: Jeg har undersøgt, om fejlen allerede er beskrevet i en eksisterende sag.
+          required: true
 
   - type: textarea
     id: test_phase
     attributes:
-      label: Instruktioner til testfasen (Må ikke redigeres)
+      label: Testvejledning til den videre behandling
+      description: Dette er vejledning til den ansvarlige for rettelsen. Testresultater tilføjes som kommentarer, når sagen er klar til brugertest.
       value: |
-        ## ⚠️ Instruktioner til testfasen
+        Ved brugertest dokumenteres følgende i en kommentar:
+        - [ ] Version af QGIS, OS2planCO2 og operativsystem
+        - [ ] Testtrin og anvendte testdata samt beregningsindstillinger
+        - [ ] Forventede og faktiske resultater, inklusive enheder ved beregninger
+        - [ ] Eventuelle afvigelser og testens konklusion
 
-        Når denne sag flyttes til **Klar til brugertest**, skal den tildelte leverandør udføre følgende **i sagens kommentarer** (ikke ved at redigere den oprindelige sagsbeskrivelse):
-
-        - Tilføje en tydelig **testbeskrivelse**
-        - Angive de anvendte **testdata**
-        - Dokumentere **forventede kontra faktiske resultater**
-        - Beskrive eventuelle afvigelser
-
-        ## Tjekliste for test
-
-        - [ ] Testbeskrivelse tilføjet som kommentar
-        - [ ] Testdata angivet
-        - [ ] Resultater dokumenteret
-
-        ⚠️ Tidligere afsnit i denne sag må ikke ændres. Al testdokumentation skal tilføjes som kommentarer.
+        Bevar den oprindelige fejlbeskrivelse som grundlag for testen.
     validations:
       required: false
