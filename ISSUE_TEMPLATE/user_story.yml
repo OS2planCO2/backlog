@@ -1,0 +1,119 @@
+name: "User Story"
+description: "En User Story er en kort, enkel fortælling om, hvad en bruger gerne vil kunne gøre."
+title: "[User Story]: "
+labels:
+  - User Story
+assignees: []
+type: Feature
+projects: ["os2valghalla"]
+
+projects:
+  - "os2valghalla"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # User Stories og acceptkriterier
+
+        ## User Stories
+
+        User Stories er en central del af OS2valghallas backlog. De beskriver, hvad en bruger ønsker at opnå, og hvorfor det er vigtigt.
+
+        **Som** [rolle]
+
+        **ønsker jeg at** [handling/mål]
+
+        **så jeg kan** [gevinst/værdi]
+
+        ## Acceptkriterier
+
+        Acceptkriterier er de betingelser, der skal være opfyldt, før en User Story kan betragtes som færdig.
+
+        **Givet** [konteksten / systemets nuværende tilstand]
+
+        **Når** [handlingen / det brugeren gør]
+
+        **Så** [resultatet / hvordan systemet reagerer]
+
+        Acceptkriterier hjælper med at definere, hvad der skal implementeres, og sikrer, at alle har en fælles forståelse af det forventede resultat. Derfor er det vigtigt, at hver User Story indeholder tydelige acceptkriterier for at sikre kvalitet og ensartethed i implementeringen.
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: Beskriv brugerbehovet som en User Story.
+      placeholder: |
+        Som systemadministrator
+
+        ønsker jeg at kunne eksportere enhedskonfigurationer
+
+        så jeg hurtigt kan genskabe den samme opsætning på nye enheder.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptkriterier
+      description: Beskriv de kriterier, der skal være opfyldt, for at User Storyn kan accepteres.
+      placeholder: |
+        Givet at brugeren er logget ind som administrator
+
+        Når brugeren vælger "Eksportér konfiguration"
+
+        Så downloades konfigurationen som en fil
+
+        ---
+
+        Givet at eksporten er gennemført
+
+        Når filen er blevet genereret
+
+        Så vises en bekræftelse til brugeren
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_information
+    attributes:
+      label: Yderligere oplysninger
+      description: Links, mockups, afhængigheder eller andre relevante oplysninger.
+      placeholder: |
+        Tilføj eventuelle supplerende oplysninger her.
+    validations:
+      required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Vedhæftninger
+      description: Tilføj skærmbilleder, mockups, logfiler eller andre relevante filer ved at trække dem ind i sagen, efter den er oprettet.
+      placeholder: |
+        Vedhæft relevante filer, billeder eller links.
+    validations:
+      required: false
+
+  - type: textarea
+    id: test_phase
+    attributes:
+      label: Instruktioner til testfasen (Må ikke redigeres)
+      value: |
+        ## ⚠️ Instruktioner til testfasen
+
+        Når denne sag flyttes til **Klar til brugertest**, skal den tildelte leverandør udføre følgende **i sagens kommentarer** (ikke ved at redigere den oprindelige sagsbeskrivelse):
+
+        - Tilføje en tydelig **testbeskrivelse**
+        - Angive de anvendte **testdata**
+        - Dokumentere **forventede kontra faktiske resultater**
+        - Beskrive eventuelle afvigelser
+
+        ## Tjekliste for test
+
+        - [ ] Testbeskrivelse tilføjet som kommentar
+        - [ ] Testdata angivet
+        - [ ] Resultater dokumenteret
+
+        ⚠️ Tidligere afsnit i denne sag må ikke ændres. Al testdokumentation skal tilføjes som kommentarer.
+    validations:
+      required: false

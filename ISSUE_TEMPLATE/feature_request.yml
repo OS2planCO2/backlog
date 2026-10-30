@@ -1,0 +1,110 @@
+name: "Udviklingsønske"
+description: "Foreslå en ny funktion eller forbedring"
+title: "[Udviklingsønske]: "
+labels:
+  - Feature request
+assignees: []
+type: Feature
+projects: ["os2valghalla"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Før du opretter et funktionsønske, bedes du undersøge, om det allerede er blevet foreslået, så dubletter undgås.
+
+        Her kan du indberette udviklingsønsker til OS2valghallas koordinationsgruppe. Ønskerne vil blive gennemgået og prioriteret i forbindelse med udviklingsforløb 1-2 gange om året.
+
+  - type: textarea
+    id: current_situation
+    attributes:
+      label: Nuværende situation
+      description: |
+        Beskriv den nuværende arbejdsgang, og forklar hvorfor den eksisterende funktionalitet ikke er tilstrækkelig.
+      placeholder: |
+        Jeg forsøger at...
+        Den nuværende begrænsning er...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Foreslået funktion
+      description: |
+        Beskriv den funktion, du gerne vil have tilføjet, og hvordan den bør fungere set fra brugerens perspektiv.
+      placeholder: |
+        Jeg kunne godt tænke mig...
+        Den skal fungere ved at...
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Eksempler eller anvendelsesscenarier
+      description: |
+        Giv konkrete eksempler. Vedhæft gerne skærmbilleder, mockups, videoer eller links til lignende løsninger, hvis de findes.
+      placeholder: |
+        Eksempel:
+        Relateret diskussion:
+        Skærmbillede:
+    validations:
+      required: false
+
+  - type: textarea
+    id: value
+    attributes:
+      label: Værdi og fordele
+      description: |
+        Forklar, hvem der får gavn af funktionen, og hvorfor den vil forbedre produktet.
+        Skyldes dit forslag et særligt behov eller et problem?
+      placeholder: |
+        Denne funktion vil...
+        Den vil gavne...
+    validations:
+      required: true
+
+  - type: input
+    id: kontaktperson_navn
+    attributes:
+      label: Navn
+      placeholder: Indtast navn
+    validations:
+      required: true
+
+  - type: input
+    id: kontaktperson_mail
+    attributes:
+      label: Mail
+      placeholder: Indtast mailadresse
+    validations:
+      required: true
+
+  - type: input
+    id: kommune
+    attributes:
+      label: Kommune
+      placeholder: Indtast kommune
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kontakt
+    attributes:
+      label: Må vi kontakte dig ved behov for uddybning?
+      options:
+        - Ja
+        - Nej
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Tjekliste
+      options:
+        - label: Jeg har undersøgt, om funktionsønsket allerede findes, før jeg oprettede dette.
+          required: true
+        - label: Jeg har beskrevet ønsket sagligt og respektfuldt.
+          required: true

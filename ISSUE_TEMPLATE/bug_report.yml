@@ -1,0 +1,130 @@
+name: "Fejlrapportering"
+description: "Rapportér en fejl eller uventet adfærd"
+title: "[Fejl]: "
+labels:
+  - Bug
+assignees: []
+type: Bug
+projects: ["os2valghalla"]
+
+projects:
+  - "os2valghalla"
+
+body:
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Resumé
+      description: Beskriv kort problemet.
+      placeholder: |
+        Brugere kan ikke gemme ændringer på en enhed.
+    validations:
+      required: true
+
+  - type: input
+    id: page_url
+    attributes:
+      label: Side-URL
+      description: URL'en hvor problemet opstår.
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Faktisk adfærd
+      description: Hvad sker der?
+      placeholder: |
+        Når der klikkes på "Gem", vises en fejlmeddelelse, og ændringerne bliver ikke gemt.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Forventet adfærd
+      description: Hvad burde ske i stedet?
+      placeholder: |
+        Ændringerne gemmes korrekt, og brugeren modtager en bekræftelse.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Trin til at genskabe fejlen
+      description: Beskriv, hvordan fejlen kan genskabes.
+      placeholder: |
+        1. Log ind
+        2. Åbn en enhed
+        3. Redigér en værdi
+        4. Klik på "Gem"
+        5. Observer fejlen
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Miljø
+      description: Version, browser, operativsystem eller andre relevante oplysninger.
+      placeholder: |
+        Ekstern eller intern hjemmeside:
+        Browser:
+        Operativsystem:
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Konsekvens
+      description: Hvor kritisk er fejlen for afviklingen af valget? Hvilken betydning har problemet for brugerne eller driften?
+      placeholder: |
+        Det er ikke muligt at fordele opgaver, hvilket gør valghandlingen juridisk ugyldig.
+    validations:
+      required: true
+
+  - type: input
+    id: kontaktperson_mail
+    attributes:
+      label: Mail
+      placeholder: Indtast mailadresse
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Vedhæftninger
+      description: Træk og slip skærmbilleder, logfiler, videoer eller andre relevante filer efter oprettelse af sagen.
+      placeholder: |
+        Tilføj relevante skærmbilleder, filer eller links.
+    validations:
+      required: false
+
+  - type: textarea
+    id: test_phase
+    attributes:
+      label: Instruktioner til testfasen (Må ikke redigeres)
+      value: |
+        ## ⚠️ Instruktioner til testfasen
+
+        Når denne sag flyttes til **Klar til brugertest**, skal den tildelte leverandør udføre følgende **i sagens kommentarer** (ikke ved at redigere den oprindelige sagsbeskrivelse):
+
+        - Tilføje en tydelig **testbeskrivelse**
+        - Angive de anvendte **testdata**
+        - Dokumentere **forventede kontra faktiske resultater**
+        - Beskrive eventuelle afvigelser
+
+        ## Tjekliste for test
+
+        - [ ] Testbeskrivelse tilføjet som kommentar
+        - [ ] Testdata angivet
+        - [ ] Resultater dokumenteret
+
+        ⚠️ Tidligere afsnit i denne sag må ikke ændres. Al testdokumentation skal tilføjes som kommentarer.
+    validations:
+      required: false
